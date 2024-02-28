@@ -15,10 +15,4 @@ export class AppController {
   getMsg(@Param("param") param: string): string {
     return this.appService.getMsg(param);
   }
-
-  @Post("/route")
-  postLog(@Body() body: any){
-    console.log(body)
-    return "done"
-  }
 }
