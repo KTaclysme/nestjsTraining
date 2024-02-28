@@ -1,16 +1,12 @@
 Projet libre avec contraintes d'implémentations.
-
 Backend NestJS avec au moins :
 
+1 module statique X 
 
+1 module dynamique ~~
 	
-1 module statique et 1 module dynamique
+1 contrôleur X
 	
-1 contrôleur
+2 services X
 	
-2 services
-	
-1 middleware
-
-
-Envoyez-moi l'URL de votre repo public lorsque vous aurez terminé.
+1 middleware ~~
