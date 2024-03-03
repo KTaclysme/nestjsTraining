@@ -13,7 +13,7 @@ Backend NestJS avec au moins :
 
 Projet gestionnaire de tâches :
 
-Module statique pour afficher des informations sur l'application comme la page d'accueil et la page "À propos".
+Module statique pour afficher des informations sur l'application comme la page d'accueil et la page "À propos". X 
 
 Module dynamique pour gérer les tâches à faire.
 

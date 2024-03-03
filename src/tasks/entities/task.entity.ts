@@ -1,15 +1,15 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from "typeorm"
 
 @Entity()
-export class User {
+export class Task {
     @PrimaryGeneratedColumn()
     id: number
 
     @Column()
-    Description: String
+    description: String
 
     @Column({default: false})
-    State: boolean
+    state: boolean
 
     @CreateDateColumn()
     createdAt: Date;
