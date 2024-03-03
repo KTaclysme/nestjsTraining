@@ -15,10 +15,10 @@ Projet gestionnaire de tâches :
 
 Module statique pour afficher des informations sur l'application comme la page d'accueil et la page "À propos". X 
 
-Module dynamique pour gérer les tâches à faire.
+Module dynamique pour gérer les tâches à faire. 
 
-Contrôleur pour gérer les opérations CRUD (créer, lire, mettre à jour, supprimer) sur les tâches.
+Contrôleur pour gérer les opérations CRUD (créer, lire, mettre à jour, supprimer) sur les tâches. X
 
-Services pour gérer la logique métier des tâches et leur stockage en base de données.
+Services pour gérer la logique métier des tâches et leur stockage en base de données. 
 
 Middleware pour valider les données entrantes lors de la création ou de la modification de tâches.

@@ -4,9 +4,11 @@ import { AppService } from './app.service';
 import { LoggingMiddleware } from './logging/logging.middleware';
 import { TasksModule } from './tasks/tasks.module';
 import { TasksController } from './tasks/tasks.controller';
+import { MongooseModule } from '@nestjs/mongoose';
+
 
 @Module({
-  imports: [TasksModule],
+  imports: [TasksModule, MongooseModule.forRoot('mongodb://localhost:27017')],
   controllers: [AppController, TasksController],
   providers: [AppService],
 })
