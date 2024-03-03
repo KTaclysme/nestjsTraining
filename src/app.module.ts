@@ -3,10 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { LoggingMiddleware } from './logging/logging.middleware';
 import { TasksModule } from './tasks/tasks.module';
+import { TasksController } from './tasks/tasks.controller';
 
 @Module({
   imports: [TasksModule],
-  controllers: [AppController],
+  controllers: [AppController, TasksController],
   providers: [AppService],
 })
 
