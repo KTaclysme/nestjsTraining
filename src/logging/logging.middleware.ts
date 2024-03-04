@@ -9,10 +9,8 @@ export class LoggingMiddleware implements NestMiddleware {
     const { method, url, ip } = req;
     const userAgent = req.get('user-agent') || '';
 
-    // Log request details
     this.logger.log(`Request ${method} ${url} from ${ip} by ${userAgent}`);
 
-    // Pass request to the next middleware or route handler
     next();
   }
 }
