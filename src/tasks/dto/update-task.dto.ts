@@ -1,12 +1,6 @@
-// update-task.dto.ts
-import { IsString, IsOptional } from 'class-validator';
-
 export class UpdateTaskDto {
-  @IsOptional()
-  @IsString()
-  title?: string;
-
-  @IsOptional()
-  @IsString()
-  description?: string;
+  readonly id: number;
+  readonly description: string;
+  readonly state: boolean;
+  readonly createdAt: Date;
 }
