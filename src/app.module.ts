@@ -4,14 +4,23 @@ import { AppService } from './app.service';
 import { LoggingMiddleware } from './logging/logging.middleware';
 import { TasksModule } from './tasks/tasks.module';
 import { MongooseModule } from '@nestjs/mongoose';
-
+import { DatabaseConnectionMiddleware } from './db-connection/db-connection.middleware';
 @Module({
-  imports: [TasksModule, MongooseModule.forRoot('mongodb://localhost/nest')],
+  imports: [
+    TasksModule,
+    MongooseModule.forRootAsync({
+      useFactory: () => ({
+        uri: 'mongodb://127.0.0.1:27017', 
+      }),
+    }),
+  ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,DatabaseConnectionMiddleware],
 })
+
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggingMiddleware).forRoutes(AppController);
+    consumer.apply(LoggingMiddleware,DatabaseConnectionMiddleware)
+    .forRoutes('*');
   }
 }

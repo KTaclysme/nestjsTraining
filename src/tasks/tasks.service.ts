@@ -4,6 +4,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Task } from './schemas/tasks.schema';
 import { CreateTaskDto } from './dto/create-task.dto';
 import { UpdateTaskDto } from './dto/update-task.dto';
+import { Connection } from 'mongoose';
+
 
 @Injectable()
 export class TasksService {
