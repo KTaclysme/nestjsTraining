@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -10,13 +10,12 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get("/bienvenu/:param")
-  getMsg(@Param("param") param: string): string {
+  @Get('/bienvenu/:param')
+  getMsg(@Param('param') param: string): string {
     return this.appService.getMsg(param);
   }
 
-  
-  @Get("/apropos")
+  @Get('/apropos')
   getPropos(): string {
     return this.appService.getPropos();
   }

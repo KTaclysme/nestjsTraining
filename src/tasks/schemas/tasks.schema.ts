@@ -5,17 +5,17 @@ export type TaskDocument = HydratedDocument<Task>;
 
 @Schema()
 export class Task {
-    @Prop({ required: true })
-    id: number
+  @Prop({ required: true })
+  id: number;
 
-    @Prop()
-    description: String
+  @Prop()
+  description: string;
 
-    @Prop({default: false})
-    state: boolean
+  @Prop({ default: false })
+  state: boolean;
 
-    @Prop()
-    createdAt: Date;  
+  @Prop()
+  createdAt: Date;
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
