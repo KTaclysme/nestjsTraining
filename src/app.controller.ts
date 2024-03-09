@@ -15,8 +15,4 @@ export class AppController {
     return this.appService.getMsg(param);
   }
 
-  @Get('/apropos')
-  getPropos(): string {
-    return this.appService.getPropos();
-  }
 }

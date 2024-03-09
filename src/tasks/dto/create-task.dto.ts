@@ -1,6 +1,12 @@
+import { IsString, IsBoolean, IsOptional, IsDate } from 'class-validator';
+
 export class CreateTaskDto {
-  readonly id: number;
+  @IsString()
   readonly description: string;
+
+  @IsBoolean()
   readonly state: boolean;
+
+  @IsDate()
   readonly createdAt: Date;
 }
