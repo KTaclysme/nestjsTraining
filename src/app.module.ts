@@ -4,24 +4,24 @@ import { AppService } from './app.service';
 import { LoggingMiddleware } from './logging/logging.middleware';
 import { TasksModule } from './tasks/tasks.module';
 import { MongooseModule } from '@nestjs/mongoose';
-import { DatabaseConnectionMiddleware } from './db-connection/db-connection.middleware';
 import { TaskValidationMiddleware } from './task-validator/task-validator.middleware';
+import { RateLimiterMiddleware } from './rate-limiter/rate-limiter.middleware';
 @Module({
   imports: [
-    TasksModule,
     MongooseModule.forRootAsync({
       useFactory: () => ({
         uri: 'mongodb://127.0.0.1:27017', 
       }),
     }),
+    TasksModule,
   ],
   controllers: [AppController],
-  providers: [AppService,DatabaseConnectionMiddleware,TaskValidationMiddleware],
+  providers: [AppService],
 })
 
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(LoggingMiddleware,DatabaseConnectionMiddleware,TaskValidationMiddleware)
-    .forRoutes('*');
+    consumer.apply(LoggingMiddleware, RateLimiterMiddleware).forRoutes('*')
+    consumer.apply(TaskValidationMiddleware).forRoutes('/tasks');
   }
 }

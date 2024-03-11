@@ -5,16 +5,13 @@ export type TaskDocument = HydratedDocument<Task>;
 
 @Schema()
 export class Task {
-  @Prop({ required: true })
-  id: number;
-
   @Prop()
   description: string;
 
   @Prop({ default: false })
   state: boolean;
 
-  @Prop()
+  @Prop({ default: Date.now })
   createdAt: Date;
 }
 

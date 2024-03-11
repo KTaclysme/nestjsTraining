@@ -1,7 +1,7 @@
-import { TaskValidatorMiddleware } from './task-validator.middleware';
+import { TaskValidationMiddleware } from './task-validator.middleware';
 
-describe('TaskValidatorMiddleware', () => {
+describe('TaskValidationMiddleware', () => {
   it('should be defined', () => {
-    expect(new TaskValidatorMiddleware()).toBeDefined();
+    expect(new TaskValidationMiddleware()).toBeDefined();
   });
 });
