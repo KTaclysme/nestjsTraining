@@ -8,6 +8,7 @@ export class RateLimiterMiddleware implements NestMiddleware {
 
   constructor() {
     this.limiter = rateLimit({
+      //15 minutes
       windowMs: 15 * 60 * 1000,
       limit: 10, 
       message: 'Trop de demandes. Veuillez réessayer plus tard.',
